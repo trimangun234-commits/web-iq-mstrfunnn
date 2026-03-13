@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium IQ Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <main class="app-container">
+
+        <!-- Registration Screen -->
+        <section id="register-screen" class="screen active">
+            <h1 class="title glitch" data-text="Spill Identitas">Spill Identitas <span class="highlight">Lo Dulu!</span>
+            </h1>
+            <p class="description">Sebelum lu ngebuktiin seberapa <i>over-powered</i> (OP) otak lu, drop nama sama email
+                dulu di bawah ya. No cap! 🧢</p>
+
+            <form id="register-form" class="register-form">
+                <div class="input-group">
+                    <label for="user-name">Isi Nama Lo Dulu Bro</label>
+                    <input type="text" id="user-name" required placeholder="Contoh: Budi Sigma" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label for="user-email">Email Aktif</label>
+                    <input type="email" id="user-email" required placeholder="Contoh: santuy@vibes.com"
+                        autocomplete="off">
+                </div>
+                <button type="submit" class="btn primary-btn">Gas Mulai Tes! 🚀</button>
+            </form>
+
+            <button id="show-admin-btn" class="text-btn admin-link">Login Sepuh(Admin)</button>
+        </section>
+
+        <!-- Start Screen -->
+        <section id="start-screen" class="screen">
+            <h1 class="title glitch" data-text="TestBY:Mstrfunnn">TestBY:<span class="highlight">Mstrfunnn</span></h1>
+            <p class="description">Gas uji seberapa <i>savage</i> logika, intuisi, sama <i>problem-solving</i> lo. Tes ini dibikin khusus buat ngukur seberapa tinggi <i>power level</i> (IQ) otak lu secara real! 🧠💥</p>
+            <div class="info-badges">
+                <div class="badge">🔥 60 Pertanyaan Random</div>
+                <div class="badge">⏳ Max 3 Menit/Studi Kasus</div>
+            </div>
+            <button id="start-btn" class="btn primary-btn">Gas Mulai Sekarang! 🔥</button>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="screen">
+            <header class="quiz-header">
+                <div class="header-top">
+                    <span id="question-counter">Soal 1 / 60</span>
+                    <div class="timer-container" id="timer-box">
+                        ⏱️ <span id="time-left">03:00</span>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="question-container">
+                <h2 id="question-text" class="question-text">Memuat pertanyaan...</h2>
+                <div id="question-image-container" class="question-image-container" style="display: none;">
+                    <img id="question-image" src="" alt="Pola Gambar">
+                </div>
+                <div id="options-container" class="options-grid">
+                    <!-- Options injected here via JS -->
+                </div>
+            </div>
+
+            <footer class="quiz-footer">
+                <button id="next-btn" class="btn secondary-btn" disabled>Gaskeuun ➔</button>
+            </footer>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="result-screen" class="screen">
+            <div class="result-content">
+                <h2 class="result-title">Hasil Analisa Otak Lo, <span id="display-name">Peserta</span> 👀</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="final-score" class="score-number">120</span>
+                    </div>
+                </div>
+                <h3 id="iq-classification" class="classification">Sangat Cerdas</h3>
+                <p id="result-description" class="result-desc">Kemampuan logika dan pemecahan masalah lo udah level sepuh asli!</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value" id="correct-answers">8/10</span>
+                        <span class="stat-label">Hoki / Benar</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="accuracy-rate">80%</span>
+                        <span class="stat-label">Win Rate</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <button id="restart-btn" class="btn secondary-btn" style="flex: 1;">Rematch? 🔁</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Login Screen -->
+        <section id="admin-login-screen" class="screen">
+            <h1 class="title">Markas <span class="highlight">Sepuh (Admin)</span> 🕵️‍♂️</h1>
+            <p class="description">Masukin password rahasia buat ngintip <i>Leaderboard</i> siapa aja yang paling pinter di sini.</p>
+
+            <div class="register-form">
+                <div class="input-group">
+                    <label for="admin-password">Password Rahasia</label>
+                    <input type="password" id="admin-password" placeholder="••••••••">
+                </div>
+                <button id="admin-submit-btn" class="btn primary-btn">Retas Dashboard 💻</button>
+                <button id="back-to-home-btn" class="btn secondary-btn" style="margin-top: 10px;">Cabut ke Awal</button>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard Screen -->
+        <section id="admin-dashboard-screen" class="screen">
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="font-size: 1.5rem;">👑 <span class="highlight">Leaderboard Tersakti</span></h2>
+                <div style="display: flex; gap: 15px;">
+                    <button id="admin-reset-btn" class="text-btn" style="color: #fbbf24;">Reset Akun Beban</button>
+                    <button id="admin-logout-btn" class="text-btn" style="color: var(--danger);">Log Out</button>
+                </div>
+            </header>
+
+            <div class="table-container">
+                <table class="score-table">
+                    <thead>
+                        <tr>
+                            <th>Peringkat</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Nilai IQ</th>
+                            <th>Akurasi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="score-table-body">
+                        <!-- Score rows injected via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Firebase SDK (v9 compat mode) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+
+    <!-- Firebase Config (edit this file with YOUR project details) -->
+    <script src="firebase-config.js"></script>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
