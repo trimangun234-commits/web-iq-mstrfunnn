@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "name": "budi",
+      "email": "budi@gmail.com",
+      "score": 80,
+      "iq": 80,
+      "classification": "Di Bawah Rata-Rata",
+      "timeTaken": "00:00",
+      "date": "2026-03-12T15:31:09.147Z"
+    },
+    {
+      "name": "nisa",
+      "email": "nisa@gmail.com",
+      "score": 0,
+      "iq": 70,
+      "classification": "Menyontek (Reload Browser)",
+      "timeTaken": "00:00",
+      "date": "2026-03-12T15:32:47.460Z"
+    }
+  ]
+}
